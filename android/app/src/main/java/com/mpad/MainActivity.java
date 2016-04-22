@@ -1,6 +1,5 @@
 package com.mpad;
 
-import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
