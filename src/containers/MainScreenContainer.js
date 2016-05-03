@@ -23,7 +23,7 @@ const glypy = glypyMapMaker({
 var LobbyMgr=require('./LobbyMgr');
 //var Fiancial=require('../components/FinancialComponent');
 //var MySet=require('../components/MySetComponent');
-//import LobbyMgrContainer from './LobbyMgr/LobbyMgrContainer';
+import LobbyMgrContainer from './LobbyMgr/LobbyMgrContainer';
 var tabBarProps={};
 tabBarProps['onActiveColor']='#009900';
 tabBarProps['onInactiveColor']='gray';
@@ -33,14 +33,16 @@ class MainScreenContainer extends Component{
     _tabbarToggle(value) {
         this.refs['myTabbar'].getBarRef().show(value);
     }
-   shouldComponentUpdate(){
+/*   shouldComponentUpdate(){
         return false;
-    }
+    }*/
     componentWillReceiveProps(nextProps){
         const {ShowTabBar}=nextProps.MainScreen;
+        var name=this.props.global.currentUser;
        this. _tabbarToggle(ShowTabBar);
     }
     render () {
+
         return (
             <Tabbar ref="myTabbar" barColor={'#eeeeee'} >
                 <Tab name="Home">
@@ -55,7 +57,7 @@ class MainScreenContainer extends Component{
                 <Tab name="LobbyMgr">
                     <IconWithBar label="大堂管理"  {...tabBarProps} type={glypy.LobbyMgr} from={'FontAwesome'}/>
                     <RawContent>
-                       < LobbyMgr {...this.props}/>
+                       < LobbyMgrContainer {...this.props}/>
                     </RawContent>
 
                 </Tab>

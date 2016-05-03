@@ -80,5 +80,5 @@ const extendRawContent = (ChildComponent) => {
   return RawContent;
 }
 
-const RawContent = extendRawContent()
+const RawContent = extendRawContent();
 export { RawContent, extendRawContent };

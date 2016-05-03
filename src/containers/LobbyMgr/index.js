@@ -9,6 +9,7 @@ var {
 //var Manager=require('../../components/LobbyMgrComponentRedux/Manager');
 //var CustomMsg=require('../../components/LobbyMgrComponentRedux/CustomMsg');
 import LobbyMgrContainer from './LobbyMgrContainer';
+import LoginContainer from '../LoginContainer';
 var Talk=require('../../components/IMComponent/index');
 class index extends Component{
     _configureScene () {
@@ -17,6 +18,13 @@ class index extends Component{
 
     _renderScene (router, navigator) {
 
+
+        if(this.props.global.currentUser=='')
+        {
+            return (
+                <LoginContainer navigator={navigator}  lastComponent={router.Component} {...this.props} />
+            )
+        }
 
         return (
             <router.Component navigator={navigator} {...this.props} {...this.props.actions}{...router.Payload}/>

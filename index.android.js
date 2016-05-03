@@ -5,4 +5,5 @@
 
 'use strict';
 import MPadStarter from './src/MPad'
+//import MPadStarter from './src/MPadlogin'
 MPadStarter('android')

@@ -1,5 +1,5 @@
 'use strict';
-
+var handler=require('./handler');
 const Hapi = require('hapi');
 
 const server = new Hapi.Server();
@@ -13,25 +13,22 @@ server.route({
     }
 });
 
-server.route({
+/*server.route({
     method: 'GET',
     path: '/{name}',
     handler: function (request, reply) {
         reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
     }
+});*/
+server.route({
+    method: 'POST',
+    path: '/login',
+    handler:handler.loginUser,
 });
 server.route({
-    method: 'GET',
-    path: '/hello/{user?}',
-    handler: function (request, reply) {
-        const user = request.params.user ? encodeURIComponent(request.params.user) : 'stranger';
-        reply('Hello ' + user + '!');
-    },
-    config: {
-        description: 'Say hello!',
-        notes: 'The user parameter defaults to \'stranger\' if unspecified',
-        tags: ['api', 'greeting']
-    }
+    method: 'POST',
+    path: '/register',
+    handler:handler.registerUser,
 });
 server.start((err) => {
 
