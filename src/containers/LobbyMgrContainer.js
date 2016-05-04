@@ -3,22 +3,29 @@
  */
 import React from 'react-native';
 import {bindActionCreators} from 'redux';
-import * as LobbyMgrAction from '../../reducers/lobby/LobbyMgrActions';
+import * as LobbyMgrAction from '../reducers/lobby/LobbyMgrActions';
+import LoginContainer from './LoginContainer';
 let {
     View,
     Component
     } = React;
 import {connect} from 'react-redux'
 
-import LobbyMgr from '../../components/LobbyMgrComponent/Manager'
+import LobbyMgr from '../components/LobbyMgrComponent/Manager'
 
 class LobbyMgrContainer extends Component {
     render() {
 
 
-        return (
-            <LobbyMgr  {...this.props}/>
-        )
+        if(false){
+            return (
+                <LoginContainer  {...this.props}/>
+            )
+        }else {
+            return (
+                <LobbyMgr  {...this.props}/>
+            )
+        }
     }
 }
 function mapStateToProps(state) {
@@ -30,7 +37,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 
     return {
-        actions: bindActionCreators(LobbyMgrAction, dispatch)
+        lobbyMgrActions: bindActionCreators(LobbyMgrAction, dispatch)
 
     };
 }

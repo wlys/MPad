@@ -14,7 +14,7 @@ var {
     Component
     } = React;
 var {width, height, scale} = require('./Style');
-import CustomMsgContainer from '../../containers/LobbyMgr/CustomMsgContainer' ;
+import CustomMsgContainer from '../../containers/CustomMsgContainer' ;
 var ds = new ListView.DataSource({
     rowHasChanged: (r1, r2) => r1 !== r2
 });
@@ -39,9 +39,9 @@ class List extends Component {
     }
 
     _tabSelectedEvent(msg) {
-
+/*
         const{showTabBar}=this.props;
-        showTabBar(false);
+        showTabBar(false);*/
         var router={Component: CustomMsgContainer,Payload:{msg:msg}};
         this.props.navigator.push(router);
     }

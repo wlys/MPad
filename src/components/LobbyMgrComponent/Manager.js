@@ -101,8 +101,8 @@ class Manager extends Component {
 
     }
     onBackAndroid() {
-        const {showTabBar,tabBarShow}=this.props;
-        showTabBar(true);
+/*        const {showTabBar,tabBarShow}=this.props;
+        showTabBar(true);*/
         if (this.props.navigator.getCurrentRoutes().length > 1) {
            this.props.navigator.pop();
           return true;
@@ -119,7 +119,7 @@ class Manager extends Component {
         this.props.navigator.push(router);
     }
     _renderTabItems(tellerData) {
-        const { changeActiveTabStatus} = this.props.actions;
+        const { changeActiveTabStatus} = this.props.lobbyMgrActions;
         const {activityTab} = this.props.lobby;
         return tellerData.map(function (items, i) {
             return (

@@ -4,6 +4,7 @@
 import React, {
     AppRegistry,
     Platform,
+    Navigator
     } from 'react-native';
 import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux'
@@ -11,18 +12,18 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import rootReducer from './reducers/index';
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 const store = createStoreWithMiddleware(rootReducer);
-
-import MainScreenContainer from './containers/MainScreenContainer';
+import Router from './router';
 export default function native(platform) {
 
     const MPad = React.createClass ({
+
         render() {
             if (Platform.OS === 'android') {
-                console.log(platform)
+
                 return (
                     <Provider store={store}>
 
-                        <MainScreenContainer/>
+                             <Router/>
 
                     </Provider>
 

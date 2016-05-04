@@ -20,10 +20,10 @@ const glypy = glypyMapMaker({
 
 });
 //var Home = require('../components/HomeComponent');
-var LobbyMgr=require('./LobbyMgr');
+
 //var Fiancial=require('../components/FinancialComponent');
 //var MySet=require('../components/MySetComponent');
-import LobbyMgrContainer from './LobbyMgr/LobbyMgrContainer';
+import LobbyMgrContainer from './LobbyMgrContainer';
 var tabBarProps={};
 tabBarProps['onActiveColor']='#009900';
 tabBarProps['onInactiveColor']='gray';
@@ -93,7 +93,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 
     return {
-        actions: bindActionCreators(MainScreenActions, dispatch)
+        mainScreenActions: bindActionCreators(MainScreenActions, dispatch)
 
     };
 }

@@ -12,5 +12,6 @@ export default keyMirror({
     REGISTER: null,
     ON_AUTH_FORM_FIELD_CHANGE:null,
     IS_FETCHING:null,
-    SET_CURRENT_USR:null
+    SET_CURRENT_USR:null,
+    SET_CURRENT_PAGE:null
 });

@@ -10,7 +10,7 @@ let {
     } = React;
 import {connect} from 'react-redux'
 
-import CustomMsg from '../../components/LobbyMgrComponent/CustomMsg'
+import CustomMsg from '../components/LobbyMgrComponent/CustomMsg'
 
 class CustomMsgContainer extends Component {
     render() {

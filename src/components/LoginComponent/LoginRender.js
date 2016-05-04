@@ -136,7 +136,7 @@ class LoginRender extends Component {
         let leftMessage = this.getMessage(leftMessageType, this.props.actions);
         let rightMessage = this.getMessage(rightMessageType, this.props.actions);
 
-
+// this.props.login.isFetching||!this.props.login.isValid
         return (
 
             <View style={styles.container}>
@@ -154,7 +154,7 @@ class LoginRender extends Component {
                         </View>
 
                         <FormButton
-                            isDisabled={this.props.login.isFetching||!this.props.login.isValid}
+                            isDisabled={false}
                             onPress={onButtonPress}
                             buttonText={loginButtonText}/>
                         <View >

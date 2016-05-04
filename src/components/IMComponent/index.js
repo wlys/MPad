@@ -35,7 +35,7 @@ var index = React.createClass({
                 style={styles.toolbar}
 
                 onIconClicked={() => {
-                this.props.tabBarShow(true);
+                /*this.props.tabBarShow(true);*/
                 this.props.navigator.pop()}
                 }
                 onActionSelected={this.onActionSelected}/>
@@ -43,7 +43,7 @@ var index = React.createClass({
         );
     },
     render() {
-        this.props.tabBarShow(false);
+       // this.props.tabBarShow(false);
         return (
             <View>
                 {this._renderHeader()}
