@@ -11,7 +11,7 @@ let {
     } = React;
 import {connect} from 'react-redux'
 
-import LobbyMgr from '../components/LobbyMgrComponent/Manager'
+import LobbyMgr from '../components/LobbyMgrComponent/lobbyManager'
 
 class LobbyMgrContainer extends Component {
     render() {

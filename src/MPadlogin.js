@@ -12,10 +12,11 @@ import rootReducer from './reducers/index';
 const createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 const store = createStoreWithMiddleware(rootReducer);
 
-import LoginContainer from './containers/LoginContainer';
+import Router from './router';
 export default function native(platform) {
 
     const MPad = React.createClass ({
+
         render() {
             if (Platform.OS === 'android') {
                 console.log(platform)
@@ -24,7 +25,7 @@ export default function native(platform) {
 
                     <Provider store={store}>
 
-                        <LoginContainer/>
+                        <Router/>
 
                     </Provider>
 

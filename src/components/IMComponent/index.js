@@ -2,7 +2,7 @@
 var React = require('react-native');
 var GiftedMessenger = require('./GiftedMessenger');
 var {Dimensions,View,ToolbarAndroid,StyleSheet,BackAndroid} = React;
-
+var NavigationBar = require( '../_thirdpartComponent/NavBar');
 var index = React.createClass({
 
 
@@ -24,24 +24,35 @@ var index = React.createClass({
             date: new Date(),
         });
     },
-    _renderHeader() {
-        var title = '交谈';
-        return (
 
-            <ToolbarAndroid
-                navIcon={require('image!ic_back_white')}
-                title={title}
-                titleColor="white"
-                style={styles.toolbar}
+_tabSelectedEvent(){
+    /*        const {showTabBar,tabBarShow}=this.props;
+     showTabBar(true);*/
+    if (this.props.navigator.getCurrentRoutes().length > 1) {
+        this.props.navigator.pop();
+        return true;
+    }
+},
+_renderHeader() {
+    const leftButtonConfig = {
+        title: String.fromCharCode(parseInt('f142',16)),
+        handler: () => this._tabSelectedEvent(),
 
-                onIconClicked={() => {
-                /*this.props.tabBarShow(true);*/
-                this.props.navigator.pop()}
-                }
-                onActionSelected={this.onActionSelected}/>
+        styleText:{
+            fontFamily:'Entypo',
+            fontSize:40,
+        },
+    };
+    return (
 
-        );
-    },
+
+        <NavigationBar
+            title={{ title: "客户信息" }}
+            leftButton={leftButtonConfig}
+            />
+
+    );
+},
     render() {
        // this.props.tabBarShow(false);
         return (

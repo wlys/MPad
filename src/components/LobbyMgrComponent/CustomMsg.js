@@ -5,7 +5,7 @@
 'use strict';
 var React = require('react-native');
 var NavigationBar = require( '../_thirdpartComponent/NavBar');
-var MyChart=require('./MyChart');
+
 var {
     BarChart,
     CombinedChart,
@@ -25,7 +25,6 @@ var {
     ToastAndroid,
 
     } = React;
-var Manager = require('./Manager');
 var {width, height, scale} = require('./Style');
 var FrontStyles=require('./FrontStyles');
 var dataSource4={
@@ -235,8 +234,8 @@ class CustomMsg extends Component {
 
     }
     _tabSelectedEvent(){
-        const {showTabBar,tabBarShow}=this.props;
-        showTabBar(true);
+/*        const {showTabBar,tabBarShow}=this.props;
+        showTabBar(true);*/
         if (this.props.navigator.getCurrentRoutes().length > 1) {
             this.props.navigator.pop();
             return true;

@@ -29,7 +29,7 @@ var DRAWER_WIDTH_LEFT = 56;
 //var Home=require('./home');
 
 
-var ListContainer = require('./ListContainerTap');
+
 var List = require('./List');
 var FrontStyles=require('./FrontStyles');
 var TellerData = [{
@@ -132,10 +132,10 @@ class Manager extends Component {
                         <View style={[styles.tabTitle,{marginTop:2}]}>
                             <Text style={FrontStyles.tellerNum}>{items.TellerNum}</Text>
                         </View>
-                        <View style={[styles.msgRow,{marginTop:2}]}>
+                        <View style={{marginTop:2}}>
                             <Text style={FrontStyles.label}>可办业务:{items.Busi + ''}</Text>
                         </View>
-                        <TouchableOpacity onPress={()=>this._talkEvent(i)}>
+                        <TouchableOpacity onPress={()=>this._talkEvent(i)} disabled={i!=activityTab}>
                         <View style={[styles.msgRow,{marginTop:20}]}>
                             <Text style={FrontStyles.talk}>{String.fromCharCode(parseInt('f27c',16))}</Text>
                         </View>
@@ -168,7 +168,7 @@ class Manager extends Component {
 
             styleText:{
                 fontFamily:'Entypo',
-                fontSize:30,
+                fontSize:25,
             },
         };
         const rightButtonConfig = {
@@ -177,7 +177,7 @@ class Manager extends Component {
 
             styleText:{
                 fontFamily:'Octicons',
-                fontSize:30,
+                fontSize:25,
             },
         };
         return (
@@ -276,7 +276,10 @@ var styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
+    msgRow:{
+        height: height * 0.1,
+        width: width*0.33 ,
+    },
     toolbar: {
         backgroundColor: '#333333',
         height: 56

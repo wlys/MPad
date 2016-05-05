@@ -1,0 +1,1 @@
+想把Navigator用redux封装失败了，动画效果无法保留。
