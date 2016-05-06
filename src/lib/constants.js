@@ -13,5 +13,6 @@ export default keyMirror({
     ON_AUTH_FORM_FIELD_CHANGE:null,
     IS_FETCHING:null,
     SET_CURRENT_USR:null,
-    SET_CURRENT_PAGE:null
+    SET_CURRENT_PAGE:null,
+    CHG_CAL_CHD_STATE:null
 });

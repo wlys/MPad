@@ -14,6 +14,10 @@ import {connect} from 'react-redux'
 import LobbyMgr from '../components/LobbyMgrComponent/lobbyManager'
 
 class LobbyMgrContainer extends Component {
+    shouldComponentUpdate( nextProps, nextState){
+
+        return !(nextProps.lobby===this.props.lobby&&nextProps.global === this.props.global);
+    }
     render() {
 
 

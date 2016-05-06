@@ -1,5 +1,5 @@
 /**
- * Created by liu on 2016/3/9.
+ * Created by liu on 2016/5/6.
  */
 var React = require('react-native');
 var {

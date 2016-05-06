@@ -13,7 +13,7 @@ var {
     ToolbarAndroid,
     Component
     } = React;
-var {width, height, scale} = require('./Style');
+var {width, height, scale} = require('../../lib/windowStyle');
 import CustomMsgContainer from '../../containers/CustomMsgContainer' ;
 var ds = new ListView.DataSource({
     rowHasChanged: (r1, r2) => r1 !== r2

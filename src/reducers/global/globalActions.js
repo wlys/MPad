@@ -24,4 +24,6 @@ export function setCurrentUser(currentUser) {
     currentUser: currentUser
   };
 }
-
+export function loginOut() {
+  setCurrentUser('');
+}

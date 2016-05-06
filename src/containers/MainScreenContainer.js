@@ -5,6 +5,7 @@ import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker } from '../componen
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as MainScreenActions from '../reducers/MainScreen/MainScreenActions';
+import MySet from './MySetContainer';
 var React = require('react-native');
 var {
     AppRegistry,
@@ -24,27 +25,31 @@ const glypy = glypyMapMaker({
 //var Fiancial=require('../components/FinancialComponent');
 //var MySet=require('../components/MySetComponent');
 import LobbyMgrContainer from './LobbyMgrContainer';
-var tabBarProps={};
-tabBarProps['onActiveColor']='#009900';
-tabBarProps['onInactiveColor']='gray';
-tabBarProps['onActiveColorBar']='#009900';
-tabBarProps['onInactiveColorBar']='#fff';
-class MainScreenContainer extends Component{
+var tabBarProps = {};
+tabBarProps['onActiveColor'] = '#009900';
+tabBarProps['onInactiveColor'] = 'gray';
+tabBarProps['onActiveColorBar'] = '#009900';
+tabBarProps['onInactiveColorBar'] = '#fff';
+class MainScreenContainer extends Component {
     _tabbarToggle(value) {
         this.refs['myTabbar'].getBarRef().show(value);
     }
-/*   shouldComponentUpdate(){
-        return false;
-    }*/
-    componentWillReceiveProps(nextProps){
-        const {ShowTabBar}=nextProps.MainScreen;
-        var name=this.props.global.currentUser;
-       this. _tabbarToggle(ShowTabBar);
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return !(nextProps.MainScreen === this.props.MainScreen &&
+        nextProps.global === this.props.global);
     }
-    render () {
+
+    componentWillReceiveProps(nextProps) {
+        const {ShowTabBar}=nextProps.MainScreen;
+        var name = this.props.global.currentUser;
+        this._tabbarToggle(ShowTabBar);
+    }
+
+    render() {
 
         return (
-            <Tabbar ref="myTabbar" barColor={'#eeeeee'} >
+            <Tabbar ref="myTabbar" barColor={'#eeeeee'}>
                 <Tab name="Home">
                     <IconWithBar label=" 首页" {...tabBarProps} type={glypy.Home} from={'icomoon'}/>
                     <RawContent>
@@ -57,7 +62,7 @@ class MainScreenContainer extends Component{
                 <Tab name="LobbyMgr">
                     <IconWithBar label="大堂管理"  {...tabBarProps} type={glypy.LobbyMgr} from={'FontAwesome'}/>
                     <RawContent>
-                       < LobbyMgrContainer {...this.props}/>
+                        < LobbyMgrContainer {...this.props}/>
                     </RawContent>
 
                 </Tab>
@@ -69,7 +74,7 @@ class MainScreenContainer extends Component{
                     </RawContent>
                 </Tab>
                 <Tab name="FiancialMarket">
-                    <IconWithBar label="金融行情"  {...tabBarProps}type={glypy.Fiancial} from={'icomoon'}/>
+                    <IconWithBar label="金融行情"  {...tabBarProps} type={glypy.Fiancial} from={'icomoon'}/>
                     <RawContent>
                         <Text>金融行情</Text>
                     </RawContent>
@@ -77,7 +82,7 @@ class MainScreenContainer extends Component{
                 <Tab name="settings">
                     <IconWithBar label="我的"  {...tabBarProps} type={glypy.Settings} from={'icomoon_slg2'}/>
                     <RawContent>
-                        <Text>我的</Text>
+                        <MySet {...this.props} />
                     </RawContent>
 
                 </Tab>
@@ -97,4 +102,4 @@ function mapDispatchToProps(dispatch) {
 
     };
 }
-export default connect(mapStateToProps, mapDispatchToProps,null,{withRef:true})(MainScreenContainer);
+export default connect(mapStateToProps, mapDispatchToProps, null, {withRef: true})(MainScreenContainer);

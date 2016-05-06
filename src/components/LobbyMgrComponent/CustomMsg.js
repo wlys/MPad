@@ -25,7 +25,7 @@ var {
     ToastAndroid,
 
     } = React;
-var {width, height, scale} = require('./Style');
+var {width, height, scale} = require('../../lib/windowStyle');
 var FrontStyles=require('./FrontStyles');
 var dataSource4={
     "entryCount": 3,
