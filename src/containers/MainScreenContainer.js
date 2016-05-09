@@ -24,7 +24,9 @@ const glypy = glypyMapMaker({
 
 //var Fiancial=require('../components/FinancialComponent');
 //var MySet=require('../components/MySetComponent');
+import HomeContainer from './HomeContainer.js';
 import LobbyMgrContainer from './LobbyMgrContainer';
+
 var tabBarProps = {};
 tabBarProps['onActiveColor'] = '#009900';
 tabBarProps['onInactiveColor'] = 'gray';
@@ -53,7 +55,7 @@ class MainScreenContainer extends Component {
                 <Tab name="Home">
                     <IconWithBar label=" 首页" {...tabBarProps} type={glypy.Home} from={'icomoon'}/>
                     <RawContent>
-                        <Text>我的</Text>
+                        < HomeContainer {...this.props} />
 
                     </RawContent>
 
