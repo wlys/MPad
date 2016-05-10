@@ -33,7 +33,7 @@ var FundListHeader = React.createClass({
     componentDidMount() {
         var navigator = this.props.navigator;
         var mainScreen = this.props.mainScreen;
-       alert("DidMount,router's length:"+this.props.navigator.getCurrentRoutes().length);
+       //alert("DidMount,router's length:"+this.props.navigator.getCurrentRoutes().length);
         BackAndroid.addEventListener('hardwareBackPress', function(){
 
             if (navigator && navigator.getCurrentRoutes().length > 1) {
@@ -48,7 +48,7 @@ var FundListHeader = React.createClass({
     componentWillUnmount() {
         var navigator = this.props.navigator;
         var mainScreen = this.props.mainScreen;
-        alert("WillUnmount,router's length:"+this.props.navigator.getCurrentRoutes().length);
+        //alert("WillUnmount,router's length:"+this.props.navigator.getCurrentRoutes().length);
         BackAndroid.removeEventListener('hardwareBackPress');
     },
 
