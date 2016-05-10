@@ -8,7 +8,7 @@ let {
     } = React;
 import {connect} from 'react-redux'
 
-import Home from '../components/HomeComponent'
+import Home from '../components/HomeComponent/home'
 
 class HomeContainer extends Component {
     shouldComponentUpdate( nextProps, nextState){
