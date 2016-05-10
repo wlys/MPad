@@ -17,6 +17,11 @@ var HomeHeader = React.createClass({
         this.props.navigator.push(router);
         //this.props.mainScreen._tabbarToggle(true);
     },
+    _tabSelectedEvent_notelist(){
+        var router = {name:'NoteList'};
+        this.props.navigator.push(router);
+        //this.props.mainScreen._tabbarToggle(true);
+    },
 
     //componentDidMount() {
     //    var navigator = this.props.navigator;
@@ -52,7 +57,7 @@ var HomeHeader = React.createClass({
                 fontSize:36,
             },
             tintColor :'white',
-            //handler: () => this._tabSelectedEvent(),
+            handler: () => this._tabSelectedEvent_notelist()
         };
         //this.props.mainScreen._tabbarToggle(false);
         return (

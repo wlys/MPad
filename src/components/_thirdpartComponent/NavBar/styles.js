@@ -6,8 +6,11 @@ var {
     Dimensions,
     } = React;
 
-const NAV_BAR_HEIGHT = (Dimensions.get('window').height/13);
+var globalStyles = require('../../../styles/globalStyles');
+
+//const NAV_BAR_HEIGHT = (Dimensions.get('window').height/10);
 const STATUS_BAR_HEIGHT = 20;
+const NAV_BAR_HEIGHT = globalStyles.NAVBAR_HEIGHT;
 
 module.exports = {
   navBarContainer: {
@@ -21,6 +24,7 @@ module.exports = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'stretch',
+    backgroundColor:'#009900'
   },
   customTitle: {
     position: 'absolute',
@@ -42,6 +46,7 @@ module.exports = {
   navBarButtonText: {
     fontSize: 17,
     letterSpacing: 0.5,
+    color:'white'
   },
   navBarTitleContainer: {
     position: 'absolute',
@@ -53,9 +58,10 @@ module.exports = {
     alignItems: 'center',
   },
   navBarTitleText: {
-    fontSize: 17,
-    letterSpacing: 0.5,
-    color: '#333',
-    fontWeight: '500',
+    fontFamily:'  ',
+    fontSize: 20,
+    letterSpacing: 1.4,
+    color: 'white',
+    fontWeight: '200',
   },
 };

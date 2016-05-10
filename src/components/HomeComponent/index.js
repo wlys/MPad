@@ -12,6 +12,7 @@ var FundList = require('./FundList');
 var MorningMeeting = require('./MorningMeeting');
 var FundDetail = require('./FundDetail');
 var Login = require('./login');
+var NoteList = require('./NoteList');
 
 var index =React.createClass({
 
@@ -37,6 +38,9 @@ var index =React.createClass({
                 break;
             case "Login":
                 Component = Login;
+                break;
+            case "NoteList":
+                Component = NoteList;
                 break;
             default: //default view
                 Component = Home;
